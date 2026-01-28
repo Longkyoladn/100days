@@ -21,7 +21,9 @@
     width: 120px;
     height: 120px;
     background: red;
-    position: absolute;
+    position: relative;
+    top : -150px;
+    left : 10px;
     transform: rotate(-45deg);
     animation: beat 1s infinite;
   }
@@ -69,7 +71,46 @@
 <body>
 
 <div class="heart"></div>
-<div class="text">  ##### </div>
+<div class="text1">
+  <p style="color: rgb(0, 217, 255);">
+    Bae ấn vào cái trái tym này ikk 👉
+  </p>
+</div>
+
+
+<style>
+.text1 {
+  position: fixed;
+  top: 150px;
+  right: 1150px;
+  opacity: 1;
+}
+
+.text-show {
+  animation: showAndHide 2s ease forwards;
+}
+
+@keyframes showAndHide {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+</style>
+
+<script>
+  const text1 = document.querySelector(".text1");
+</script>
+
 
 <script>
 function createHeart() {
@@ -90,7 +131,7 @@ function createHeart() {
 
 setInterval(createHeart, 300);
 
-</script>
+</script> 
 
 <style>
 @keyframes fly {
@@ -101,9 +142,219 @@ setInterval(createHeart, 300);
 }
 </style> 
 
-<audio autoplay loop>
-  <source src="nhac.mp3" type="audio/mpeg">
-</audio>
+
+<audio id="bgm" loop>
+    <source src="inlove.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    document.addEventListener("click", () => {
+  if (bgm.paused) {
+    bgm.play();
+    text1.classList.add("text-show");
+  } else {
+    bgm.pause(); 
+  }
+});
+  </script>
+
+<div class="intro"> <p style = "color: rgb(0, 174, 255)" >
+  Hì nói thì hôm qua mình nói hết với nhau rùi nè nên h anh tạo cái wed này để show lại các ảnh nhá 
+</p> </div>
+
+<div class="scene">
+  <img src="pic1.jpg" class="img">
+  <div class="caption"><p style="color: rgb(0, 174, 255)">
+    Hôm đi ăn rùi tỏ tình nè bae Tiếc quá hôm đấy mình chụp ít ảnh không là có cái để xem lại rùi anh mún xem lại ghê á ☺️🤤 :>
+  </p></div>
+</div>
+
+<div class="scene">
+  <img src="pic2.jpg" class="img">
+  <div class="caption"><p style="color: rgb(0, 174, 255)">
+    Cái nắm tay đầu tiên nè :>
+  </p></div>
+</div>
+<div class="scene">
+  <img src="pic3.PNG" class="img">
+  <div class="caption"><p style="color: rgb(0, 174, 255)">
+    Ảnh chụp photobooth nèee  :>
+  </p></div>
+</div>
+<div class="scene">
+  <img src="pic3.6.jpg" class="img">
+  <div class="caption"><p style="color: rgb(0, 174, 255)">
+    Phù thủy nè 👁️‍🗨️🐺 :>
+  </p></div>
+</div>
+<div class="scene">
+  <img src="pic3.7.jpg" class="img">
+  <div class="caption"><p style="color: rgb(0, 174, 255)">
+    Bò sữa ngoan nè 🐄 :>
+  </p></div>
+</div>
+<div class="scene">
+  <img src="pic4.PNG" class="img">
+  <div class="caption"><p style="color: rgb(0, 174, 255)">
+    trông Yêu chưa nèe 💞 :>
+  </p></div>
+</div>
+<div class="scene">
+  <img src="special1.jpg" class="img">
+  <div class="caption"><p style="color: rgb(0, 174, 255)">
+    Thư em gửi cho anh nèeee chắc cái ni đóng khung được lun quá hehe 💪:>
+  </p></div>
+</div>
+<div class="scene">
+  <img src="pic4.5.jpg" class="img">
+  <div class="caption"><p style="color: rgb(0, 174, 255)">
+    Ảnh chụp tết dương nè 
+  </p></div>
+</div>
+<div class="scene">
+  <img src="pic5.jpg" class="img">
+  <div class="caption"><p style="color: rgb(0, 174, 255)">
+    Đây nữa 
+  </p></div>
+</div>
+
+<div class="scene">
+  <img src="pic6.jpg" class="img">
+  <div class="caption"><p style="color: rgb(0, 174, 255)">
+    Đây nữa bae ợ 
+  </p></div>
+</div>
+<div class="scene">
+  <img src="special.jpg" class="img">
+  <div class="caption"><p style="color: rgb(0, 174, 255)">
+    Cơ mà dù seo thì anh vẫn thấy cái này đặc biệt hehee vì nó là Ảnh đầu tiên của anh có ở máy anh 
+  </p></div>
+</div>
+
+<div class="outro">
+<p class ="outro-line">Tạm thời là hết ảnh rồi á bae </p>
+<p class  = "outro-line"> Anh nghĩ là thời gian tới mình nên chụp ảnh nhiều hơn để những lúc này có nhìu cái để xem 🤣 đặt KPI nhá bae </p>
+<p class = "outro-line">Anh Yêu emmmm đi cùng với anh trong chặng đường tiếp theo nhá bae</p>
+<p class = "outro-line"> Hết rùiiii </p>
+</div>
+
+<style>
+.intro{ 
+  opacity: 0;
+}
+.intro-run {
+  animation: introAnim 5s ease forwards;
+}
+
+@keyframes introAnim {
+  0% { opacity: 0; transform: translateY(40px); }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-40px); }
+}
+
+.scene {
+  position: fixed;
+  width: 200px;
+  max-width: 20vmax;
+  opacity: 0;
+  text-align: center;
+  top : 400px ; 
+  right : 1150px;
+}
+
+.img {
+  width: 300px;
+}
+.caption {
+  margin-top: 12px;
+  font-size: 20px;
+}
+
+.scene-run {
+  animation: sceneAnim 10s ease forwards;
+}
+
+@keyframes sceneAnim {
+  0% { opacity: 0; transform: translateY(40px); }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-60px); }
+}
+
+.outro-line {
+  opacity: 0;
+}
+
+.outro-run .outro-line {
+  animation: outroFade 1.5s ease forwards;
+}
+
+.outro-run .outro-line:nth-child(1) { animation-delay: 0s; }
+.outro-run .outro-line:nth-child(2) { animation-delay: 2s; }
+.outro-run .outro-line:nth-child(3) { animation-delay: 4s; }
+.outro-run .outro-line:nth-child(4) {animation-delay : 6s; }
+
+@keyframes outroFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+</style>
+
+<script>
+const pgm = document.getElementById("pgm")
+const intro = document.querySelector(".intro");
+const scenes = document.querySelectorAll(".scene");
+const outroText = document.querySelector(".outro");
+
+let currentScene = 0 ; 
+
+document.addEventListener("click", () => {
+  startIntro();
+});
+
+function startIntro() {
+  intro.classList.add("intro-run");
+
+  intro.addEventListener("animationend", () => {
+    intro.style.display = "none";
+    playScene(currentScene);
+  }, { once: true });
+} 
+
+function playScene(index) {
+  if (index >= scenes.length) {
+    playOutro();
+    return;
+  }
+
+  const scene = scenes[index];
+  if (index %2 == 0){
+    scene.classList.add("scene-run");
+  }
+  else {
+    scene.style.right = 300 +"px";
+    scene.classList.add("scene-run");
+  }
+
+  scene.addEventListener("animationend", () => {
+    scene.style.display = "none";
+    playScene(index + 1);
+  }, { once: true });
+}
+
+function playOutro() {
+  outroText.classList.add("outro-run");
+}
+</script>
+
 
 </body>
 </html>
