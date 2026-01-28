@@ -2,6 +2,8 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>❤️ Tặng Bé iuuu của anh nèeeee </title>
 
 <style>
@@ -255,20 +257,25 @@ setInterval(createHeart, 300);
 
 .scene {
   position: fixed;
-  width: 200px;
-  max-width: 20vmax;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   opacity: 0;
   text-align: center;
-  top : 400px ; 
-  right : 1150px;
+  padding: 16px;
 }
 
+
 .img {
-  width: 300px;
+  width: min(75vw, 260px);
+  height: auto;
+  border-radius: 12px;
 }
 .caption {
-  margin-top: 12px;
-  font-size: 20px;
+  font-size: clamp(15px, 4vw, 20px);
+  line-height: 1.4;
 }
 
 .scene-run {
@@ -283,6 +290,8 @@ setInterval(createHeart, 300);
 }
 
 .outro-line {
+  font-size: clamp(15px, 4vw, 20px);
+  line-height: 1.4;
   opacity: 0;
 }
 
@@ -336,14 +345,7 @@ function playScene(index) {
   }
 
   const scene = scenes[index];
-  if (index %2 == 0){
-    scene.classList.add("scene-run");
-  }
-  else {
-    scene.style.right = 300 +"px";
-    scene.classList.add("scene-run");
-  }
-
+  scene.classList.add("scene-run")
   scene.addEventListener("animationend", () => {
     scene.style.display = "none";
     playScene(index + 1);
@@ -352,7 +354,7 @@ function playScene(index) {
 
 function playOutro() {
   outroText.classList.add("outro-run");
-}
+} 
 </script>
 
 
